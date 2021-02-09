@@ -112,6 +112,9 @@
         #portfolio {max-width: 1000px; margin: 0 auto;}
         #portfolio li {float: left; width: 25%; text-align: center;}
         #portfolio li {margin-top: 80px; margin-bottom: 55px;}
+        #portfolio li a:hover {_font-size: 20px; _transform: scale(120%);}
+        .box{width: 1000px;}
+        .box video{width: 100%;}
         #portfolio img {width: 100%;}
         
         #extra {padding-top: 150px; max-width: 1000px; margin: 0 auto; text-align: center;}
@@ -123,6 +126,23 @@
         #contact ul .mobile {}
     </style>
     
+    <script>
+        $(document).ready(function(){
+        //비디오 load(),play(),pause()
+         var vid=$("video").get(0);//0: 인덱스,첫번째 video태그를 선택
+          //비디오에는 get꼭 사용하기
+          $(".load").click(function(){
+              //$("video").load();//사용불가
+              vid.load();
+          });
+          $(".play").click(function(){
+              vid.play();
+          });
+          $(".pause").click(function(){
+              vid.pause();
+          }); 
+      });
+    </script>
     
 </head>
 <body>
@@ -265,6 +285,16 @@
             <li><a href="#">Portfolio2</a></li>
             <li><a href="#">Portfolio3</a></li>
             <li><a href="#">Portfolio4</a></li>
+        </ul>
+        <div class="box">
+            <video>
+                <source src="img/epl_0208_mp4.mp4" type="video/mp4">
+            </video>
+        </div>
+        <ul class="btnSet">
+            <li class="load">load</li>
+            <li class="play">play</li>
+            <li class="pause">pause</li>
         </ul>
         <img src="img/ex1.png" alt="">
     </div>
